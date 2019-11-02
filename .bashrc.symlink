@@ -114,7 +114,10 @@ if ! shopt -oq posix; then
 fi
 
 
-# Jeff's additions
+if [ -f ~/.localrc ]; then
+    . ~/.localrc
+fi
+
 export EDITOR=nano
 export SUDO_EDITOR=nano
 export PATH="/home/jeff/scripts:$PATH"

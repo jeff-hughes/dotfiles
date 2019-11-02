@@ -5,7 +5,6 @@ Type=Application
 Name=conky
 Comment=Startup conky
 Exec=conky -c ~/.conky/flair-dark-conky/.conkyrc
-OnlyShowIn=XFCE;
 RunHook=0
 StartupNotify=false
 Terminal=false
