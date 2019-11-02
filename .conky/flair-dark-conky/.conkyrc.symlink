@@ -1,0 +1,77 @@
+conky.config = {
+-- By Jesse_Avalos , See me on Eye Candy Linux_  on Google +
+--Modified by http://www.NoobsLab.com
+
+	background = true,
+	use_xft = true,
+	font = 'Roboto:size=9',
+	xftalpha = 0.8,
+	update_interval = 1,
+	total_run_times = 0,
+	own_window = true,
+	own_window_transparent = true,
+--#############################################
+-- Compositing tips:
+-- Conky can play strangely when used with
+-- different compositors. I have found the
+-- following to work well, but your mileage
+-- may vary. Comment/uncomment to suit.
+--#############################################
+--# no compositor
+--own_window_type override
+--own_window_argb_visual no
+
+--# xcompmgr
+--own_window_type override
+--own_window_argb_visual yes
+
+--# cairo-compmgr
+	own_window_type = 'override',
+	own_window_argb_visual = false,
+
+    own_window_type = 'desktop',
+    own_window_argb_visual = true,
+    own_window_class = 'override',
+
+--#############################################
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	double_buffer = true,
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = false,
+	stippled_borders = 0,
+	border_outer_margin = 5,
+	border_width = 1,
+	default_color = '#1C1C1C',
+	default_shade_color = '#000000',
+	default_outline_color = '#000000',
+	alignment = 'bottom_right',
+	minimum_width = 500, minimum_height = 100,
+	maximum_width = 900,
+	gap_x = 30,
+	gap_y = -40,
+	no_buffers = true,
+	uppercase = false,
+	cpu_avg_samples = 2,
+	net_avg_samples = 2,
+	short_units = true,
+	text_buffer_size = 2048,
+	use_spacer = 'none',
+	override_utf8_locale = true,
+	color1 = '#212021',
+	color2 = '#E8E1E6',
+	color3 = '#E82A2A',
+	own_window_argb_value = 0,
+	own_window_colour = '#000000',
+};
+
+conky.text = [[
+$alignr${offset -250}${voffset 20}${font GeosansLight:light:size=75}${time %-I:%M}
+$alignr${offset -250}${voffset -70}${font GeosansLight:size=20}${time %A, %B %-d}
+${offset 280}${voffset -135}${font Dingytwo:size=17}e$font ${offset 5}${voffset -11}${font GeosansLight:size=15}$uptime_short
+${offset 280}${voffset 7}${font Dingytwo:size=17}7$font ${offset 5}${voffset -11}${font GeosansLight:size=15}${cpu cpu0}%
+${offset 280}${voffset 7}${font Dingytwo:size=17}O$font ${offset 5}${voffset -11}${font GeosansLight:size=15}$memfree ($memperc%)
+${offset 280}${voffset 7}${font Dingytwo:size=17}0$font ${offset 5}${voffset -11}${font GeosansLight:size=15}Root: ${fs_used /} (${fs_used_perc /}%)
+${offset 280}${voffset 7}${font Dingytwo:size=17}0$font ${offset 5}${voffset -11}${font GeosansLight:size=15}Home: ${fs_used /home} (${fs_used_perc /home}%)
+]];

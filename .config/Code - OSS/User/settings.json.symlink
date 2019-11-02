@@ -1,0 +1,7 @@
+{
+    "editor.renderWhitespace": "boundary",
+    "editor.wordWrap": "on",
+    "window.zoomLevel": 0,
+    "terminal.integrated.fontSize": 15,
+    "editor.formatOnSave": true
+}

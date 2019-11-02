@@ -1,0 +1,15 @@
+alias cdup="cd .."
+alias ls="ls -a --group-directories-first --color=auto"
+alias ll="ls -lhA --group-directories-first"
+alias mkdir='mkdir -pv'
+alias mv='mv -i'
+alias cp='cp -i'
+
+deputize() {
+    nohup "$@" & disown
+}
+
+alias editalias="nano ~/.bash_aliases"
+alias reload="source ~/.bashrc"
+alias fuck='sudo $(history -p !!)'
+

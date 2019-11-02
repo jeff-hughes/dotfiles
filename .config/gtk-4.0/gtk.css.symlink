@@ -1,0 +1,113 @@
+/* Adding the buttons on the edges (if you don't need them, skip the next 4 lines)
+ */
+
+/*.scrollbar {
+  -GtkScrollbar-has-backward-stepper: 1;
+  -GtkScrollbar-has-forward-stepper: 1;
+  -GtkRange-slider-width: 50;
+  -GtkRange-stepper-size: 20;
+}*/
+
+/* Scrollbar trough squeezes when cursor hovers over it. Disabling that
+ */
+
+/*.scrollbar.vertical:hover:dir(ltr),
+.scrollbar.vertical.dragging:dir(ltr) {
+    margin-left: 0px;
+}
+
+.scrollbar.vertical:hover:dir(rtl),
+.scrollbar.vertical.dragging:dir(rtl) {
+    margin-right: 0px;
+}
+
+.scrollbar.horizontal:hover,
+.scrollbar.horizontal.dragging,
+.scrollbar.horizontal.slider:hover,
+.scrollbar.horizontal.slider.dragging {
+    margin-top: 0px;
+}*/
+
+/* Slider widens to fill the scrollbar when cursor hovers over it. Making it permanent
+ */
+
+/*.scrollbar.slider.vertical:dir(ltr):not(:hover):not(.dragging) {
+    margin-left: 0px;
+}
+
+.scrollbar.slider.vertical:dir(rtl):not(:hover):not(.dragging) {
+    margin-right: 0px;
+}
+
+.scrollbar.slider.horizontal:not(:hover):not(.dragging) {
+    margin-top: 0px;
+}*/
+
+
+
+.scrollbar,
+scrollbar {
+    -GtkScrollbar-has-backward-stepper: true;
+    -GtkScrollbar-has-forward-stepper: true;
+    min-width: 10px;
+    min-height: 10px;
+}
+
+.scrollbar.vertical.slider,
+scrollbar.vertical slider,
+.scrollbar.vertical.slider:hover,
+scrollbar.vertical:hover slider  {
+    min-height: 70px;
+    min-width: 10px;
+}
+
+.scrollbar.horizontal.slider,
+scrollbar.horizontal slider,
+.scrollbar.horizontal.slider:hover,
+scrollbar.horizontal:hover slider {
+    min-width: 70px;
+    min-height: 10px;
+}
+
+.scrollbar.slider:hover,
+.scrollbar.slider:active,
+scrollbar slider:hover,
+scrollbar slider:active {
+    border-radius: 30px;
+}
+
+/*.scrollbar.vertical:hover:dir(ltr),
+.scrollbar.vertical:active:dir(ltr),
+scrollbar.vertical:hover:dir(ltr),
+scrollbar.vertical:active:dir(ltr) {
+    margin-left: 0px;
+}
+
+.scrollbar.vertical:hover:dir(rtl),
+.scrollbar.vertical:active:dir(rtl),
+scrollbar.vertical:hover:dir(rtl),
+scrollbar.vertical:active:dir(rtl) {
+    margin-right: 0px;
+}
+
+.scrollbar.horizontal:hover,
+.scrollbar.horizontal:active,
+scrollbar.horizontal:hover,
+scrollbar.horizontal:active {
+    margin-top: 0px;
+}
+
+.scrollbar.vertical:dir(ltr):not(:hover):not(.dragging),
+scrollbar.vertical:dir(ltr):not(:hover):not(.dragging) {
+    margin-left: 0px;
+}
+
+.scrollbar.vertical:dir(rtl):not(:hover):not(.dragging),
+scrollbar.vertical:dir(rtl):not(:hover):not(.dragging) {
+    margin-right: 0px;
+}
+
+.scrollbar.horizontal:not(:hover):not(.dragging),
+scrollbar.horizontal:not(:hover):not(.dragging) {
+    margin-top: 0px;
+}*/
