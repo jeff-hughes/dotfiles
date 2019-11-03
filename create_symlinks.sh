@@ -10,7 +10,8 @@ BACKUP_DIR=$HOME/dotfiles-backup
 linkables=$( find -H "$DOTFILES" -maxdepth 3 -name '*.symlink' )
 
 # Make backup of existing dotfiles
-read -rn 1 -p "Back up existing, non-symlinked dotfiles? [y/N] " backup
+echo "This script will overwrite any dotfiles that match files in this directory."
+read -rn 1 -p "Do you want to back up these files first? [y/N] " backup
 if [[ $backup =~ ^([Yy])$ ]]; then
     echo -e "\\nCreating backup in $BACKUP_DIR"
     echo "=============================="
@@ -23,12 +24,12 @@ if [[ $backup =~ ^([Yy])$ ]]; then
         # sed treats them properly
         filepath=$( echo $file | sed "s/${DOTFILES//\//\\/}\/\(.*\)${filename//\//\\/}/\1/g" )
         target="$HOME/$filepath${filename%.symlink}"
-        if [ -f "$target" ]; then
+        if [[ -f "$target" && ! -h "$target" ]]; then
             echo "Backing up $filename"
             mkdir -p "$BACKUP_DIR/$filepath"
-            cp "$target" "$BACKUP_DIR/$filepath"
-        else
-            echo -e "${filename%.symlink} does not exist at this location or is a symlink"
+            mv "$target" "$BACKUP_DIR/$filepath"
+        # else
+        #     echo -e "${filename%.symlink} does not exist at this location or is a symlink"
         fi
     done
 fi
@@ -42,15 +43,19 @@ for file in $linkables ; do
     filepath=$( echo $file | sed "s/${DOTFILES//\//\\/}\/\(.*\)${filename//\//\\/}/\1/g" )
     target="$HOME/$filepath${filename%.symlink}"
 
-    if [ -e "$target" ]; then
-        echo "~/${target#$HOME/} already exists... Skipping."
-    else
-        if [[ -n "$filepath" && ! -d "$HOME/$filepath" ]]; then
-            echo "Creating ~/$filepath"
-            mkdir -p "$HOME/$filepath"
-        fi
+    if [[ -n "$filepath" && ! -d "$HOME/$filepath" ]]; then
+        echo "Creating ~/$filepath"
+        mkdir -p "$HOME/$filepath"
+    fi
 
+    if [[ -f "$target" && ! -h "$target" ]]; then
+        echo "Overwriting existing file and creating symlink for $file"
+        rm "$target"
+        ln -s "$file" "$target"
+    elif [ ! -h "$target" ]; then
         echo "Creating symlink for $file"
         ln -s "$file" "$target"
     fi
 done
+
+echo "Done. Reload your terminal."

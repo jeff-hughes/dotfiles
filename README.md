@@ -15,19 +15,17 @@ First, Clone this repo to ~/.dotfiles on your machine.
 ```bash
 git clone https://github.com/jeff-hughes/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-chmod u+x install.sh
-./install.sh
+chmod u+x create_symlinks.sh
+./create_symlinks.sh
 ```
 
-This install script will do three things:
+This `create_symlinks.sh` script will do two things:
 1. Backup any existing config files that would otherwise get overwritten,
    and store them in `~/dotfiles-backup` (optional).
 2. Create symlinks in your home directory that link to the dotfiles in
    the repo.
-3. Configure Git by prompting for your username and email address. If
-   this data already exists, pressing Enter will leave the data as is.
 
-After running the `install.sh` script, you will need to restart your
+After running the `create_symlinks.sh` script, you will need to restart your
 terminal or run `source ~/.bashrc` to see changes to your terminal.
 
 ## Programs configured by these dotfiles
@@ -44,8 +42,8 @@ This also adds some autostart files to start Conky, Plank, and an xcape
 command that maps the Windows/Super key to open the Xfce whisker menu.
 These autostart files should work on any desktop environment that is
 compliant with [XDG specifications](https://www.freedesktop.org/wiki/Specifications/).
-However, the `install.sh` script *does not* install any packages, so if
-you are not using Conky, Plank, or the Xfce whisker menu, you should
+However, the `create_symlinks.sh` script *does not* install any packages,
+so if you are not using Conky, Plank, or the Xfce whisker menu, you should
 delete these files from the `~/.dotfiles/.config/autostart` directory.
 
 ## Making modifications
@@ -59,7 +57,7 @@ a file at `~/.dotfiles/.config/.bar.symlink`, it will have a corresponding
 symlink at `~/.config/.bar`. Thus, you can edit any `.symlink` file in this
 repo and it will immediately be reflected (though you may need to restart
 the application you are reconfiguring to see the changes). If you add a new
-`.symlink` file to the repo, you will need to run `~/.dotfiles/install.sh`
+`.symlink` file to the repo, you will need to run `~/.dotfiles/create_symlinks.sh`
 again to add the new symlink.
 
 One final note: In the `.bashrc.symlink` file, there is a line that will
