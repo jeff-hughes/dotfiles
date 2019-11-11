@@ -51,7 +51,7 @@ map <leader>n :let @/=''<cr>  " clear search
 
 """"" Appearance
 syntax on  " turn on syntax highlighting
-set number  " show line numbers
+set number relativenumber  " show line numbers
 set ruler  " show file stats
 set laststatus=2  " show status bar all the time
 set showmode  " show which mode you are currently in
@@ -115,8 +115,12 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
+
+Plug 'flrnprz/candid.vim'
+Plug 'flrnprz/plastic.vim'
 
 call plug#end()
 
@@ -125,3 +129,4 @@ nnoremap <leader>f :NERDTreeToggle<cr>
 vnoremap <leader>f :NERDTreeToggle<cr>
 let NERDTreeShowHidden=1
 
+colorscheme candid
