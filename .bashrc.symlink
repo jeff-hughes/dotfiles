@@ -86,9 +86,13 @@ if [ -f ~/.localrc ]; then
     . ~/.localrc
 fi
 
-export EDITOR=vim
-export SUDO_EDITOR=vim
+export VISUAL=nvim
+export EDITOR=nvim
+export SUDO_EDITOR=nvim
 export PATH="/home/jeff/scripts:/home/jeff/.local/bin:$PATH"
+
+# adjust fuzzy finder so it searches hidden files
+export FZF_DEFAULT_COMMAND="find -L"
 
 # file type colors with `ls` command
 # basic file types

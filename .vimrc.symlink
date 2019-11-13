@@ -62,7 +62,6 @@ set wrap  " turn on line wrapping
 set wrapmargin=8  " wrap lines when coming within n characters from side
 set textwidth=79  " maximum width of line before wrapping
 set linebreak  " set soft wrapping
-set showbreak=…  " show ellipsis at wrapping line break
 set autoindent  " automatically set indent of new line
 set formatoptions=tcqrn1  " set some formatting options (see documentation for details)
 set smarttab  " tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
@@ -75,7 +74,8 @@ set expandtab  " convert tabs to spaces
 " visualize tabs and newlines
 set list
 set listchars=tab:→\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
-set showbreak=↪
+set showbreak=…  " show ellipsis at wrapping line break
+set breakindent  " indent a word-wrapped line to same indent as previous line
 
 " code folding settings
 set foldmethod=syntax  " fold based on indent
@@ -113,11 +113,20 @@ nnoremap <C-L> <C-W><C-L>
 " vim-plug plugin management
 call plug#begin('~/.vim/plugged')
 
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug '/usr/bin/fzf'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
+
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
+Plug 'scrooloose/nerdcommenter'
 
 Plug 'flrnprz/candid.vim'
 Plug 'flrnprz/plastic.vim'
@@ -128,5 +137,20 @@ call plug#end()
 nnoremap <leader>f :NERDTreeToggle<cr>
 vnoremap <leader>f :NERDTreeToggle<cr>
 let NERDTreeShowHidden=1
+
+let g:fzf_action = {
+    \ 'ctrl-s': 'split',
+    \ 'ctrl-v': 'vsplit'
+    \ }
+nnoremap <C-p> :FZF<cr>
+augroup fzf
+  autocmd!
+  autocmd! FileType fzf
+  autocmd  FileType fzf set laststatus=0 noshowmode noruler
+    \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+augroup END
+
+nnoremap <C-_> :call NERDComment(0,"toggle")<cr>
+vnoremap <C-_> :call NERDComment(0,"toggle")<cr>gv
 
 colorscheme candid
