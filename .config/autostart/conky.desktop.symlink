@@ -4,7 +4,7 @@ Version=0.9.4
 Type=Application
 Name=conky
 Comment=Startup conky
-Exec=conky -c ~/.conky/flair-dark-conky/.conkyrc
+Exec=conky -c /home/jeff.conky/flair-light-conky/.conkyrc --pause=20
 RunHook=0
 StartupNotify=false
 Terminal=false
