@@ -89,9 +89,9 @@ if [ -f ~/.localrc ]; then
     . ~/.localrc
 fi
 
-export VISUAL=nvim
-export EDITOR=nvim
-export SUDO_EDITOR=nvim
+export VISUAL=/usr/bin/vim
+export EDITOR=/usr/bin/vim
+export SUDO_EDITOR=/usr/bin/vim
 export PATH="/home/jeff/scripts:/home/jeff/.local/bin:$PATH"
 
 # adjust fuzzy finder so it searches hidden files
@@ -111,4 +111,3 @@ LS_COLORS="$LS_COLORS:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;
 LS_COLORS="$LS_COLORS:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36";
 export LS_COLORS
 
-source <(kitty + complete setup bash)
