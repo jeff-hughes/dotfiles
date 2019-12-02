@@ -71,7 +71,7 @@ $alignr${offset -250}${voffset 20}${font GeosansLight:light:size=75}${time %-I:%
 $alignr${offset -250}${voffset -70}${font GeosansLight:size=20}${time %A, %B %-d}
 ${offset 320}${voffset -135}${font Dingytwo:size=17}e$font ${offset 5}${voffset -11}${font GeosansLight:size=15}$uptime_short
 ${offset 320}${voffset 7}${font Dingytwo:size=17}7$font ${offset 5}${voffset -11}${font GeosansLight:size=15}${cpu cpu0}%
-${offset 320}${voffset 7}${font Dingytwo:size=17}O$font ${offset 5}${voffset -11}${font GeosansLight:size=15}$memfree ($memperc%)
+${offset 320}${voffset 7}${font Dingytwo:size=17}O$font ${offset 5}${voffset -11}${font GeosansLight:size=15}$mem ($memperc%)
 ${offset 320}${voffset 7}${font Dingytwo:size=17}0$font ${offset 5}${voffset -11}${font GeosansLight:size=15}Root: ${fs_used /} (${fs_used_perc /}%)
 ${offset 320}${voffset 7}${font Dingytwo:size=17}0$font ${offset 5}${voffset -11}${font GeosansLight:size=15}Home: ${fs_used /home} (${fs_used_perc /home}%)
 ]];
