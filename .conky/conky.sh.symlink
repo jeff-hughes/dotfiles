@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# this file should contain a variable CONKY_THEME
+source /home/jeff/.conky/conky_theme
+
+conky -c /home/jeff/.conky/${CONKY_THEME}/.conkyrc --pause=20
+
