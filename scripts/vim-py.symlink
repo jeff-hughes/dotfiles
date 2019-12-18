@@ -1,0 +1,15 @@
+#!/bin/bash
+
+session_name="vim-py"
+
+# check if session exists
+tmux has-session -t $session_name 2>/dev/null
+
+if [ $? != 0 ]; then
+    tmux new-session -s $session_name -d "vim ${1}"
+    tmux split-window -v 'ipython'
+    tmux new-window
+    tmux select-window -p
+fi
+
+tmux -2 attach-session -t $session_name
