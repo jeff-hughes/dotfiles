@@ -110,6 +110,10 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 
+" add new cell in Python file
+nnoremap <leader>t i<cr><cr># %%<cr><Esc>xi
+
+
 " vim-plug plugin management
 call plug#begin('~/.vim/plugged')
 
