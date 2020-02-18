@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# number of days before files in trash are deleted;
+# can specify with first argument to file, e.g., empty_trash 10
+# default: 30 days
+OFFSET=${1:-30}
+
+threshold=$(date --date="$OFFSET days ago" +%s)
+
+# print trash-list to stdout, but then pipe it to read command,
+# which reads a line at a time
+trash-list |
+while read -r line
+do
+    d=$(echo $line | cut -d' ' -f1,2)
+    dt=$(date --date="$d" +%s)
+    f=$(echo $line | cut -d' ' -f1,2 --complement)
+    if [[ $dt < $threshold ]]; then
+        trash-rm "$f"
+    fi
+done
