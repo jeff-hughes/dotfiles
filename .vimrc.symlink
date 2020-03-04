@@ -11,6 +11,9 @@ command W w !sudo tee % > /dev/null  " :W sudo saves the file
 au VimEnter * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 au VimLeave * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
 
+" remap 'fj' to Escape
+inoremap fj <Esc>
+
 set history=500  " how many lines of history Vim remembers
 set modelines=0  " turn off modelines for security reasons
 set encoding=utf-8  " set encoding
@@ -37,6 +40,11 @@ set matchpairs+=<:>  " use % to jump between pairs
 " move up/down editor lines
 nnoremap j gj
 nnoremap k gk
+
+" browsing files
+nnoremap <leader>f :Explore<cr>
+vnoremap <leader>f :Explore<cr>
+let g:netrw_liststyle = 1
 
 " searching
 set ignorecase  " case insensitive searching
@@ -111,7 +119,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 
 " add new cell in Python file
-nnoremap <leader>t i<cr><cr># %%<cr><Esc>xi
+nnoremap <leader>t o<cr># %%<cr><Esc>xi
 
 
 " vim-plug plugin management
@@ -120,10 +128,12 @@ call plug#begin('~/.vim/plugged')
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug '/usr/bin/fzf'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'ryanoasis/vim-devicons'
+Plug 'justinmk/vim-sneak'
+Plug 'tpope/vim-vinegar'
+"Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+"Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+"Plug 'ryanoasis/vim-devicons'
 
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -148,9 +158,9 @@ let g:coc_global_extensions = [
     \ ]
 
 " plugin settings
-nnoremap <leader>f :NERDTreeToggle<cr>
-vnoremap <leader>f :NERDTreeToggle<cr>
-let NERDTreeShowHidden=1
+"nnoremap <leader>f :NERDTreeToggle<cr>
+"vnoremap <leader>f :NERDTreeToggle<cr>
+"let NERDTreeShowHidden=1
 
 let g:fzf_action = {
     \ 'ctrl-s': 'split',

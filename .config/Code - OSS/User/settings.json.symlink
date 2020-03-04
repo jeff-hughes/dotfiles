@@ -2,8 +2,12 @@
     "editor.renderWhitespace": "boundary",
     "editor.wordWrap": "on",
     "window.zoomLevel": 0,
+    "editor.detectIndentation": false,
     "terminal.integrated.fontSize": 15,
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
+    "editor.lineNumbers": "relative",
+    "python.linting.pep8Enabled": false,
+    "python.linting.lineOnSave": false,
     "vim.easymotion": true,
     "vim.incsearch": true,
     "vim.useSystemClipboard": true,
@@ -27,7 +31,9 @@
             ],
             "after": [
                 ":",
-                "w"
+                "w",
+                "!",
+                "<cr>"
             ]
         },
         {
