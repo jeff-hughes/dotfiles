@@ -33,8 +33,10 @@ terminal or run `source ~/.bashrc` to see changes to your terminal.
 - Bash
 - Conky
 - Vim
+- Tmux
 - VS Code (in the repo under "Code - OSS" because I am using the open
   source version)
+- Joplin
 - Redshift
 - GTK (I hate the default GTK scrollbars, so the only thing this does is
   makes them wider)
