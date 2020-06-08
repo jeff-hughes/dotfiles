@@ -5,6 +5,7 @@
     "editor.detectIndentation": false,
     "terminal.integrated.fontSize": 15,
     "editor.formatOnSave": false,
+    "html.autoClosingTags": false,
     "editor.lineNumbers": "relative",
     "python.linting.pep8Enabled": false,
     "python.linting.lineOnSave": false,
@@ -38,10 +39,20 @@
         },
         {
             "before": [
-                "<C-n>"
+                "<leader>",
+                "t"
             ],
-            "commands": [
-                ":nohl"
+            "after": [
+                "o",
+                "<cr>",
+                "#",
+                " ",
+                "%",
+                "%",
+                "<cr>",
+                "<Esc>",
+                "x",
+                "i"
             ]
         }
     ],
@@ -49,8 +60,12 @@
     "vim.handleKeys": {
         "<C-a>": false,
         "<C-f>": false,
+        "<C-n>": false,
         "<C-x>": false,
         "<C-c>": false,
         "<C-v>": false
-    }
+    },
+    "python.dataScience.askForKernelRestart": false,
+    "python.dataScience.sendSelectionToInteractiveWindow": false,
+    "explorer.confirmDragAndDrop": false
 }

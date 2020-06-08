@@ -1,5 +1,5 @@
 alias cdup="cd .."
-alias ls="ls -aF --group-directories-first --color=auto"
+alias ls="ls -AF --group-directories-first --color=auto"
 alias ll="ls -lhAF --group-directories-first"
 alias mkdir='mkdir -pv'
 alias mv='mv -i'
@@ -7,6 +7,9 @@ alias cp='cp -i'
 
 alias venv="source venv/bin/activate"
 alias tmux-kill="tmux kill-session"
+
+# runs Rust program in current directory, and redirects stderr to file "error"
+alias cbt="RUST_BACKTRACE=1 cargo run 2>error"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -17,7 +20,7 @@ deputize() {
     nohup "$@" & disown
 }
 
-alias editalias="nano ~/.bash_aliases"
+alias editalias="vim ~/.bash_aliases"
 alias reload="source ~/.bashrc"
 alias fuck='sudo $(history -p !!)'
 
