@@ -29,7 +29,7 @@ conky.config = {
 	own_window_type = 'override',
 	own_window_argb_visual = false,
 
-    own_window_type = 'desktop',
+--own_window_type = 'desktop',
     own_window_argb_visual = true,
     own_window_class = 'override',
 
