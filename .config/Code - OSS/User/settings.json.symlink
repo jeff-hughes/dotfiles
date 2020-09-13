@@ -67,5 +67,7 @@
     },
     "python.dataScience.askForKernelRestart": false,
     "python.dataScience.sendSelectionToInteractiveWindow": false,
-    "explorer.confirmDragAndDrop": false
+    "explorer.confirmDragAndDrop": false,
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false
 }
