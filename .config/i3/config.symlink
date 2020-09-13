@@ -162,6 +162,15 @@ mode "resize" {
         bindsym Up resize shrink height 15 px
         bindsym Right resize grow width 15 px
 
+        bindsym Shift+h resize shrink width 75 px
+        bindsym Shift+j resize grow height 75 px
+        bindsym Shift+k resize shrink height 75 px
+        bindsym Shift+l resize grow width 75 px
+        bindsym Shift+Left resize shrink width 75 px
+        bindsym Shift+Down resize grow height 75 px
+        bindsym Shift+Up resize shrink height 75 px
+        bindsym Shift+Right resize grow width 75 px
+
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -180,14 +189,9 @@ bindsym $mod+m exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
 bindsym $mod+b exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
 
 
-# set up workspace the way I want it
-#bindsym $mod+x exec xfce4-terminal; exec firefox; layout tabbed; [workspace="__focused__" class="Xfce4-terminal"] focus; move left; resize set width 25 ppt
-bindsym $mod+x append_layout /home/jeff/.i3/web-workspace.json; exec xfce4-terminal; exec firefox
-
-
 # i3-gaps
 for_window [class=".*"] border pixel 2
-gaps inner 20
+gaps inner 18
 gaps outer 0
 
 # other settings
@@ -209,7 +213,8 @@ for_window [title="Microsoft Teams Notification" class="microsoft teams - previe
 for_window [title="Microsoft Teams Notification" class="Microsoft Teams - Preview"] floating enable
 
 #AppGate
-for_window [class="java-lang-Thread"] floating enable
+for_window [class="java-lang-Thread"] floating enable, move position center
+for_window [class="xfreerdp"] floating enable, move position center
 
 for_window [instance="xfce4-taskmanager" class="Xfce4-taskmanager"] floating enable
 
