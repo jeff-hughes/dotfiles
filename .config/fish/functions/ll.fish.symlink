@@ -1,0 +1,3 @@
+function ll --description 'List files -- long format'
+    command ls -lhAF --group-directories-first $argv
+end

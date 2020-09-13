@@ -1,0 +1,3 @@
+function xc --description 'Send input to clipboard'
+    command xclip -selection clipboard $argv
+end

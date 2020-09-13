@@ -1,0 +1,3 @@
+function cdup --description 'Move up one directory'
+    cd ..
+end

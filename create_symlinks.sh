@@ -7,7 +7,7 @@ set -e  # Exit immediately if a command exits with a non-zero status.
 DOTFILES=$HOME/.dotfiles
 BACKUP_DIR=$HOME/dotfiles-backup
 
-linkables=$( find -H "$DOTFILES" -maxdepth 3 -name '*.symlink' )
+linkables=$( find -H "$DOTFILES" -maxdepth 4 -name '*.symlink' )
 
 # Make backup of existing dotfiles
 echo "This script will overwrite any dotfiles that match files in this directory."

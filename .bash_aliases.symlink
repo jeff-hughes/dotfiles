@@ -4,6 +4,7 @@ alias ll="ls -lhAF --group-directories-first"
 alias mkdir='mkdir -pv'
 alias mv='mv -i'
 alias cp='cp -i'
+alias xc='xclip -selection clipboard'
 
 alias venv="source venv/bin/activate"
 alias tmux-kill="tmux kill-session"

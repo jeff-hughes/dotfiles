@@ -1,0 +1,3 @@
+function mkdir --description 'Make new directory'
+    command mkdir -pv $argv
+end

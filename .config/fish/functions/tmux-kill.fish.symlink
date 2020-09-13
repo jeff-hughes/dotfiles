@@ -1,0 +1,3 @@
+function tmux-kill --description 'Kill tmux session'
+    tmux kill-session
+end

@@ -1,0 +1,4 @@
+function deputize --description 'Completely disconnect a command from the
+terminal'
+    nohup "$argv" & disown
+end

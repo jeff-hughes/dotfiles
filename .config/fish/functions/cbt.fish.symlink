@@ -1,0 +1,4 @@
+function cbt --description 'Run Rust program in current directory and redirect
+stderr to file "error"'
+    RUST_BACKTRACE=1 cargo run 2>error
+end
