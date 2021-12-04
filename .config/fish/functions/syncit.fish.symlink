@@ -1,0 +1,3 @@
+function syncit --description 'Rsync to home server'
+    rsync -e 'ssh -p 2233' $argv
+end
