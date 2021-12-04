@@ -214,7 +214,7 @@ for_window [title="Microsoft Teams Notification" class="Microsoft Teams - Previe
 
 #AppGate
 for_window [class="java-lang-Thread"] floating enable, move position center
-for_window [class="xfreerdp"] floating enable, move position center
+for_window [class="xfreerdp"] floating enable, move position center, border pixel 0
 
 for_window [instance="xfce4-taskmanager" class="Xfce4-taskmanager"] floating enable
 
@@ -224,6 +224,9 @@ for_window [class="Kodi"] move to workspace $ws10
 for_window [class="Indicator-stickynotes"] border none
 
 for_window [class="SpeedCrunch"] floating enable, floating_maximum_size 630 x 500
+
+# SW:KOTOR
+for_window [class="steam_app_32370"] floating enable, move position center
 
 
 # autostart
