@@ -171,8 +171,8 @@ augroup fzf
     \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 augroup END
 
-nnoremap <C-_> :call NERDComment(0,"toggle")<cr>
-vnoremap <C-_> :call NERDComment(0,"toggle")<cr>gv
+nnoremap <C-_> :call nerdcommenter#Comment(0,"toggle")<cr>
+vnoremap <C-_> :call nerdcommenter#Comment(0,"toggle")<cr>gv
 
 " coc plugin settings
 

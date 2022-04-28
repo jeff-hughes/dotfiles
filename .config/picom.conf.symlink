@@ -401,7 +401,7 @@ wintypes:
   tooltip = { fade = false; shadow = true; opacity = 1; focus = true; full-shadow = false; };
   dock = { shadow = false; }
   dnd = { shadow = false; }
-  popup_menu = { opacity = 1; }
-  dropdown_menu = { opacity = 1; }
+  popup_menu = { shadow = false; opacity = 1; }
+  dropdown_menu = { shadow = false; opacity = 1; }
   unknown = { shadow = false; }
 };

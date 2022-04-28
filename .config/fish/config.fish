@@ -12,3 +12,5 @@ alias tmux-kill="tmux kill-session"
 alias pm="pacman"
 
 alias xc="xclip -selection clipboard"
+
+alias gitdiff="GIT_EXTERNAL_DIFF=difft git diff"
