@@ -6,6 +6,8 @@ alias cdup="cd .."
 #alias mv="command mv -i"
 #alias mkdir="command mkdir -pv"
 
+alias vim="nvim"
+
 alias venv="source venv/bin/activate.fish"
 alias tmux-kill="tmux kill-session"
 

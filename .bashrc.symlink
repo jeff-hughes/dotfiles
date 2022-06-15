@@ -89,9 +89,9 @@ if [ -f ~/.localrc ]; then
     . ~/.localrc
 fi
 
-export VISUAL=/usr/bin/vim
-export EDITOR=/usr/bin/vim
-export SUDO_EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/nvim
+export EDITOR=/usr/bin/nvim
+export SUDO_EDITOR=/usr/bin/nvim
 export PATH="/home/jeff/scripts:/home/jeff/.local/bin:/home/jeff/.cargo/bin:$PATH"
 
 # adjust fuzzy finder so it searches hidden files

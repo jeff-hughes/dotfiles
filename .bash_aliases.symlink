@@ -6,6 +6,8 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias xc='xclip -selection clipboard'
 
+alias vim="nvim"
+
 alias venv="source venv/bin/activate"
 alias tmux-kill="tmux kill-session"
 
