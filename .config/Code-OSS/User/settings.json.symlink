@@ -75,5 +75,6 @@
     "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontLigatures": true,
     "terminal.integrated.enablePersistentSessions": false,
-    "terminal.integrated.persistentSessionReviveProcess": "never"
+    "terminal.integrated.persistentSessionReviveProcess": "never",
+    "git.openRepositoryInParentFolders": "never"
 }

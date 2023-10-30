@@ -209,6 +209,11 @@ client.background       #222222
 
 
 # window rules
+no_focus [window_type="notification"]
+no_focus [window_role="pop-up"]
+for_window [window_type="notification"] floating enable, border pixel 0
+
+# MS Teams
 for_window [title="Microsoft Teams Notification" class="microsoft teams - preview"] floating enable
 for_window [title="Microsoft Teams Notification" class="Microsoft Teams - Preview"] floating enable
 
@@ -217,6 +222,8 @@ for_window [class="java-lang-Thread"] floating enable, move position center
 for_window [class="xfreerdp"] floating enable, move position center, border pixel 0
 
 for_window [instance="xfce4-taskmanager" class="Xfce4-taskmanager"] floating enable
+
+for_window [title="File Operation Progress" class="Thunar"] floating enable
 
 assign [class="Kodi"] $ws10
 for_window [class="Kodi"] move to workspace $ws10

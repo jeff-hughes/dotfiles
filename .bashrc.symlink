@@ -89,6 +89,7 @@ if [ -f ~/.localrc ]; then
     . ~/.localrc
 fi
 
+export LIBVA_DRIVER_NAME=nvidia
 export VISUAL=/usr/bin/nvim
 export EDITOR=/usr/bin/nvim
 export SUDO_EDITOR=/usr/bin/nvim
